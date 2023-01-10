@@ -19,7 +19,11 @@ hr {
 /* HEADER */
 header {
   background: rgb(0, 160, 198);
-  background: linear-gradient(180deg, rgba(0, 160, 198, 1) 0%, rgba(3, 109, 134, 1) 68%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 160, 198, 1) 0%,
+    rgba(3, 109, 134, 1) 68%
+  );
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
@@ -27,6 +31,9 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
+  z-index: 5;
+  position: sticky;
+  top: 0px;
 }
 
 @media screen and (min-width: 800px) {
@@ -91,9 +98,34 @@ main {
   padding: 2em 1em;
   margin-bottom: 1.5em;
 }
+.underline {
+  position: relative;
+  opacity: 60%;
+  bottom: 42px;
+  left: 20px;
+  z-index: 1;
+  scale: 1.1;
+}
 @media screen and (min-width: 700px) {
   main {
     padding: 2em;
+  }
+  .underline {
+    scale: 1.3;
+    left: 55px;
+  }
+}
+@media screen and (min-width: 805px) {
+  .underline {
+    bottom: 120px;
+    left: 240px;
+  }
+}
+@media screen and (min-width: 1070px) {
+  .underline {
+    scale: 1.3;
+    bottom: 42px;
+    left: 525px;
   }
 }
 
@@ -112,6 +144,9 @@ section h2 {
   font-weight: bold;
   background-color: #a3a3a3;
   padding: 0px 1em;
+  position: absolute;
+  top: -18px;
+  left: 25px;
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
@@ -122,6 +157,8 @@ h1 {
   font-weight: bold;
   letter-spacing: -0.03em;
   margin-bottom: 0.7em;
+  position: relative;
+  z-index: 2;
 }
 
 p,
@@ -187,6 +224,7 @@ h1 + p {
   border: 4px solid #00a0c6;
   outline: 4px solid #a02571;
   padding: 3px;
+  float: left;
 }
 ul,
 ol {
@@ -311,6 +349,7 @@ aside div {
   border: 1px solid #c3c3c3;
   margin-bottom: 1em;
   padding: 1em;
+  position: relative;
 }
 
 @media screen and (min-width: 1200px) {
@@ -326,10 +365,22 @@ aside div p:last-child {
   text-align: right;
 }
 
+.fa-tag {
+  position: absolute;
+  scale: 3;
+  opacity: 10%;
+  right: 30px;
+  top: 30px;
+}
+
 /* FOOTER */
 footer {
   background: rgb(53, 53, 53);
-  background: linear-gradient(0deg, rgba(53, 53, 53, 1) 0%, rgba(5, 85, 103, 1) 68%);
+  background: linear-gradient(
+    0deg,
+    rgba(53, 53, 53, 1) 0%,
+    rgba(5, 85, 103, 1) 68%
+  );
   box-shadow: 0 3px 3px #444;
   color: #f0f0f0;
   padding: 1em;
@@ -384,5 +435,63 @@ footer a {
   .social,
   .toTop {
     display: none;
+  }
+}
+.shortcuts {
+  padding: 16px 18px;
+  background-color: lightgray;
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 80%;
+  z-index: 0;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+a .fa-caret-square-up {
+  scale: 2;
+  color: #f65e5e;
+}
+a .fa-calendar-alt,
+a .fa-plus-square {
+  scale: 2;
+  color: #3e6bca;
+}
+
+@media screen and (max-width: 700px) {
+  #socialLink {
+    position: fixed;
+    bottom: 163px;
+    right: -12px;
+  }
+  #calendarOnline {
+    position: fixed;
+    bottom: 90px;
+    right: -12px;
+  }
+  #backToTop {
+    position: fixed;
+    bottom: 15px;
+    right: -12px;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  #socialLink {
+    position: fixed;
+    top: 15px;
+    right: -12px;
+    z-index: 10;
+  }
+  #calendarOnline {
+    position: fixed;
+    top: 90px;
+    right: -12px;
+    z-index: 10;
+  }
+  #backToTop {
+    position: fixed;
+    bottom: 15px;
+    right: -12px;
   }
 }
